@@ -13,7 +13,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Checkout Waleria's repository
+          Checkout Pawel's repository
         </a>
 
         <button onClick={sayHello}>Click me!</button>
