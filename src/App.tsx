@@ -22,7 +22,7 @@ function App() {
   );
 }
 function sayHello() {
-  alert('You clicked me!');
+  alert('You have clicked me!');
   console.log('Click happened');
 }
 
