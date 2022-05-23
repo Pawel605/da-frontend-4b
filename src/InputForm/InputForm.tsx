@@ -7,7 +7,7 @@ interface InputFormProps {
 
 export const InputForm = (props?: InputFormProps) => {
     const [displayError, setDisplayError] = useState<boolean>(false)
-    const [inputValue, setInputValue] = useState<string>('empty value')
+    const [inputValue, setInputValue] = useState<string>('default value')
     const [errorMessage, setErrorMessage] = useState<string>('')
 
     const formReadyToSubmit = !(displayError || !inputValue);

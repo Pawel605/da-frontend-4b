@@ -51,7 +51,7 @@
 }
 
 input {
-  border-radius: 10px;
+  border-radius: 25px;
   font-size: 1.3rem;
   color: #000066;
 }
@@ -61,14 +61,15 @@ input:focus {
   outline-color: aqua;
 }
 
+
 button {
   text-shadow: -1.5px 1.25px 1px rgba(66, 68, 90, 1);
-  font-size: 2rem;
-  border-radius: 9px;
+  font-size: 1.5rem;
+  border-radius: 55px;
   background-color: #2374ff;
   color: #282c34;
-  padding: 0.8rem;
-  box-shadow: -4px 4px 0px 3px #d9d9d9;
+  font-weight: bold;
+  padding: 1rem;
   transition: transform ease-in-out 0.5s;
 }
 
