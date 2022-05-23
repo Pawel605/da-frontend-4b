@@ -4,8 +4,6 @@ interface InputFormProps {
     defaultValue?: string;
 }
 
-const storageFormKey = 'inputValue';
-
 
 export const InputForm = (props?: InputFormProps) => {
     const [displayError, setDisplayError] = useState<boolean>(false)
@@ -33,25 +31,12 @@ export const InputForm = (props?: InputFormProps) => {
         }
     }
 
-    const handleSubmit = useCallback(() => {
+    const handleSubmit = () => {
         if (formReadyToSubmit) {
-            localStorage.setItem(storageFormKey, inputValue)
+            localStorage.setItem("inputValue", inputValue)
         }
-    }, [inputValue])
+    }
 
-    useEffect(() => {
-        let valueToSet = '';
-        const localStorageData = localStorage.getItem(storageFormKey)
-        if (!!localStorageData) {
-            valueToSet = localStorageData;
-        } else {
-            if (!!props?.defaultValue) {
-                valueToSet = props?.defaultValue;
-            }
-        }
-
-        setInputValue(valueToSet);
-    }, [])
 
     return <div style={{display: "flex", flexDirection: 'column'}}>
         {displayError && <div style={{color: 'red'}}>{errorMessage}</div>}
