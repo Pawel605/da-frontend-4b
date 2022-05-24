@@ -36,3 +36,44 @@
     transform: rotate(360deg);
   }
 }
+
+.Form {
+  width: 50rem;
+  height: 50rem;
+  letter-spacing: 0.25rem;
+  display: flex;
+  justify-content: center;
+  align-content: space-between;
+  padding: 0.5rem 2.5rem;
+  border-radius: 9px;
+  border: 4px solid rgba(255, 255, 255, 1);
+  text-shadow: -1.5px 1.25px 1px rgba(66, 68, 90, 1);
+}
+
+input {
+  border-radius: 25px;
+  font-size: 1.3rem;
+  color: #000066;
+}
+
+input:focus {
+  transform: scale(1.05);
+  outline-color: aqua;
+}
+
+
+button {
+  text-shadow: -1.5px 1.25px 1px rgba(66, 68, 90, 1);
+  font-size: 1.5rem;
+  border-radius: 55px;
+  background-color: #2374ff;
+  color: #282c34;
+  font-weight: bold;
+  padding: 1rem;
+  transition: transform ease-in-out 0.5s;
+}
+
+button:hover {
+  transition: transform ease-in-out 0.5s;
+  transform: translate(-3px, 3px);
+}
