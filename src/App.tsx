@@ -6,7 +6,7 @@ function App() {
     return (
         <div className="App">
             <header className="App-header">
-                <InputForm defaultValue={'hello form'}/>
+                <InputForm defaultValue={'default value'}/>
             </header>
         </div>
     );
