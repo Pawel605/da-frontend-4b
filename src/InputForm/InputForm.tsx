@@ -1,8 +1,10 @@
-import {useState} from "react";
+import {useState, useEffect, useCallback} from "react";
 
 interface InputFormProps {
     defaultValue?: string;
 }
+
+const storageFormKey = 'inputValue';
 
 
 export const InputForm = (props?: InputFormProps) => {
@@ -19,11 +21,9 @@ export const InputForm = (props?: InputFormProps) => {
             if (messageLength < 3) {
                 setErrorMessage('User name are too short')
             }
-
             if (messageLength > 20) {
                 setErrorMessage('User name are too long')
             }
-
             setDisplayError(true)
         } else {
             setDisplayError(false)
@@ -31,12 +31,25 @@ export const InputForm = (props?: InputFormProps) => {
         }
     }
 
-    const handleSubmit = () => {
+    const handleSubmit = useCallback(() => {
         if (formReadyToSubmit) {
-            localStorage.setItem("inputValue", inputValue)
+            localStorage.setItem(storageFormKey, inputValue)
         }
-    }
+    }, [inputValue, formReadyToSubmit])
 
+    useEffect(() => {
+        let valueToSet = '';
+        const localStorageData = localStorage.getItem(storageFormKey)
+        if (!!localStorageData) {
+            valueToSet = localStorageData;
+        } else {
+            if (!!props?.defaultValue) {
+                valueToSet = props?.defaultValue;
+            }
+        }
+
+        setInputValue(valueToSet);
+    }, [props])
 
     return <div style={{display: "flex", flexDirection: 'column'}}>
         {displayError && <div style={{color: 'red'}}>{errorMessage}</div>}
